@@ -18,7 +18,7 @@
         <property name="realms">
         	<list>
     			<ref bean="jdbcRealm"/>
-    			<!-- <ref bean="secondRealm"/> -->
+    			 <ref bean="secondRealm"/>
     		</list>
         </property>
         
@@ -41,12 +41,12 @@
         <property name="cacheManagerConfigFile" value="classpath:ehcache.xml"/> 
     </bean>
     
-   <!--  <bean id="authenticator" 
+     <bean id="authenticator" 
     	class="org.apache.shiro.authc.pam.ModularRealmAuthenticator">
     	<property name="authenticationStrategy">
     		<bean class="org.apache.shiro.authc.pam.AtLeastOneSuccessfulStrategy"></bean>
     	</property>
-    </bean> -->
+    </bean> 
 
     <!-- Used by the SecurityManager to access security data (users, roles, etc).
          Many other realm implementations can be used too (PropertiesRealm,
@@ -56,22 +56,22 @@
     	3.1 直接配置实现了 org.apache.shiro.realm.Realm 接口的 bean
     -->     
     <bean id="jdbcRealm" class="meng.shuai.Realm.ShiroRealm">
-    	<!-- <property name="credentialsMatcher">
+    	 <property name="credentialsMatcher">
     		<bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
     			<property name="hashAlgorithmName" value="MD5"></property>
     			<property name="hashIterations" value="1024"></property>
     		</bean>
-    	</property> -->
+    	</property> 
     </bean>
     
-    <!-- <bean id="secondRealm" class="com.atguigu.shiro.realms.SecondRealm">
+   <bean id="secondRealm" class="meng.shuai.Realm.SecondRealm">
     	<property name="credentialsMatcher">
     		<bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
     			<property name="hashAlgorithmName" value="SHA1"></property>
     			<property name="hashIterations" value="1024"></property>
     		</bean>
     	</property>
-    </bean> -->
+    </bean> 
 
     <!-- =========================================================
          Shiro Spring-specific integration
@@ -127,12 +127,14 @@
         <property name="filterChainDefinitions">
             <value>
                  /login.jsp = anon 
+                  /login= anon 
              <!--    /shiro/login = anon
-                /shiro/logout = logout
+                /shiro/logout = logout-->
                 
                 /user.jsp = roles[user]
-                /admin.jsp = roles[admin] -->
-                
+                /list.jsp = roles[admin] 
+                /logout = logout
+               <!--  /list.jsp =  roles[admin] -->
              <!--    # everything else requires authentication: -->
                 /** = authc
                
