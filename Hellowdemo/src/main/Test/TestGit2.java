@@ -9,5 +9,6 @@ public class TestGit2 {
         //111
         //ide1111
         //指提交一个
+        System.out.println("只提交一个 file2");
     }
 }
