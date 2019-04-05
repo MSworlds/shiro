@@ -11,6 +11,7 @@ public class TestGit {
 
 
         System.out.println("只提交一个");
+        System.out.println("只提交一个1");
 
     }
 }
