@@ -5,5 +5,6 @@ public class TestGit2 {
        //*****+++++file2
 
         System.out.println("12123");
+        //**
     }
 }
