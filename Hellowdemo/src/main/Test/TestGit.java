@@ -9,5 +9,8 @@ public class TestGit {
 //***8user2   add
         System.out.println(111);
 
+
+        System.out.println("只提交一个");
+
     }
 }
